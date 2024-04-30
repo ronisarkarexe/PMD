@@ -4,7 +4,7 @@ import { message } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-const Login = () => {
+const Create = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
@@ -13,24 +13,24 @@ const Login = () => {
       setLoading(true);
       try {
         await new Promise((resolve) => setTimeout(resolve, 500));
-        message.success("Login successful!");
+        message.success("Account created successful!");
         router.push("/");
       } catch (error) {
-        message.error("Login failed!");
+        message.error("Failed to create account!");
       }
       setLoading(false);
     }
   };
 
-  const loginData = {
-    title: "Login in",
-    isCreate: false,
-    accountType: "Don't have an account?",
-    createAc: "Create Account",
-    regPath: "/create"
+  const createData = {
+    title: "Create Account",
+    isCreate: true,
+    accountType: "Already have an account?",
+    createAc: "Login",
+    regPath: "/login",
   };
 
-  return <LoginPage onFinish={onFinish} loading={loading} data={loginData} />;
+  return <LoginPage onFinish={onFinish} loading={loading} data={createData} />;
 };
 
-export default Login;
+export default Create;
