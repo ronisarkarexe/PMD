@@ -2,8 +2,9 @@
 import Loading from "@/app/loading";
 import React from "react";
 import { useQuery } from "react-query";
-import { Collapse, Button } from "antd";
+import { Collapse } from "antd";
 import TeamMembersDetails from "./team-members-details";
+import Tasks from "../task/tasks";
 const { Panel } = Collapse;
 
 const fetchSingleProject = async (id) => {
@@ -31,6 +32,13 @@ const ViewProductsDetails = ({ id }) => {
         <Collapse>
           <Panel header="Team Members Details">
             <TeamMembersDetails data={data?.teamMembers} />
+          </Panel>
+        </Collapse>
+      </div>
+      <div className="mt-3">
+        <Collapse>
+          <Panel header="Tasks">
+            <Tasks />
           </Panel>
         </Collapse>
       </div>

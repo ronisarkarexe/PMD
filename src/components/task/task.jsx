@@ -22,9 +22,11 @@ const Task = ({ title, status }) => {
 
   return (
     <div className="h-[400] flex-1">
-      <h2 className="text-2xl">{title}</h2>
+      <h2 className="text-1xl">{title}</h2>
       <div
-        className="mt-3.5 h-full w-full rounded-xl bg-gray-700/50 p-4"
+        className={`mt-1 h-${
+          taskData.length > 1 ? "auto" : "28"
+        } w-full rounded-xl bg-blue-200 p-3`}
         onDrop={handelDrop}
         onDragOver={(e) => e.preventDefault()}
       >
