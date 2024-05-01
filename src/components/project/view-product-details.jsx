@@ -6,6 +6,7 @@ import { Collapse } from "antd";
 import TeamMembersDetails from "./team-members-details";
 import Tasks from "../task/tasks";
 import useProjectStore from "@/zustand/projectStore";
+import RecentActivities from "./recent-activities";
 const { Panel } = Collapse;
 
 const fetchSingleProject = async (id) => {
@@ -44,6 +45,13 @@ const ViewProductsDetails = ({ id }) => {
         <Collapse>
           <Panel header="Tasks">
             <Tasks />
+          </Panel>
+        </Collapse>
+      </div>
+      <div className="mt-3">
+        <Collapse>
+          <Panel header="Recent activities">
+            <RecentActivities data={data?.recentActivities} />
           </Panel>
         </Collapse>
       </div>

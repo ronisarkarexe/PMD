@@ -40,7 +40,7 @@ const ProductsView = ({ project }) => {
         <div>
           <Link href={`/project/view/${project?.id}`}>
             <Button type="primary" className="mr-4">
-              View
+              View/Details
             </Button>
           </Link>
           <Link href={`/project/edit/${project?.id}`}>
