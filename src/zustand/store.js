@@ -8,7 +8,7 @@ const useTaskStore = create((set) => ({
     set((state) => ({
       tasks: [
         ...state.tasks,
-        { id: uuid(), title, description, status: "TODO" },
+        { id: uuid(), title, description, status: "TODO", memberName: "" },
       ],
     })),
   dragTask: (id) => set({ draggedTask: id }),
@@ -19,6 +19,18 @@ const useTaskStore = create((set) => ({
   updateTask: (id, status) =>
     set((state) => ({
       tasks: state?.tasks.map((t) => (t.id === id ? { ...t, status } : t)),
+    })),
+  assignMemberToTask: (id, memberName) =>
+    set((state) => ({
+      tasks: state?.tasks?.map((t) => (t.id === id ? { ...t, memberName } : t)),
+    })),
+  editTask: (id, newTitle, newDescription) =>
+    set((state) => ({
+      tasks: state.tasks.map((task) =>
+        task.id === id
+          ? { ...task, title: newTitle, description: newDescription }
+          : task
+      ),
     })),
 }));
 

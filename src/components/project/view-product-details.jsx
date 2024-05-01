@@ -1,10 +1,11 @@
 "use client";
 import Loading from "@/app/loading";
-import React from "react";
+import React, { useEffect } from "react";
 import { useQuery } from "react-query";
 import { Collapse } from "antd";
 import TeamMembersDetails from "./team-members-details";
 import Tasks from "../task/tasks";
+import useProjectStore from "@/zustand/projectStore";
 const { Panel } = Collapse;
 
 const fetchSingleProject = async (id) => {
@@ -14,11 +15,15 @@ const fetchSingleProject = async (id) => {
 };
 
 const ViewProductsDetails = ({ id }) => {
-  console.log(id);
+  const addMembers = useProjectStore((state) => state.addMembers);
   const { data, isLoading, error } = useQuery("project", () =>
     fetchSingleProject(id)
   );
-
+  useEffect(() => {
+    if (data) {
+      addMembers(data?.teamMembers);
+    }
+  }, [data]);
   if (isLoading) {
     <Loading />;
   }

@@ -1,7 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import AddProjectPopup from "./add-project-popup";
-import Projects from "./projects";
 import { Divider } from "antd";
 import { useQuery, useQueryClient } from "react-query";
 import ProductsView from "./products-view";
@@ -24,13 +22,6 @@ const ProjectComponent = () => {
 
   return (
     <div>
-      {/* <AddProjectPopup
-        isModalOpen={isModalOpen}
-        setIsModalOpen={setIsModalOpen}
-        showModal={() => setIsModalOpen(true)}
-        handleCancel={() => setIsModalOpen(false)}
-        projectTitle="Add"
-      /> */}
       <div className="">
         <Divider orientation="left">Project List</Divider>
         {/* <Projects /> */}

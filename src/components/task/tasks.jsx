@@ -5,7 +5,7 @@ import Task from "./task";
 const Tasks = () => {
   return (
     <div>
-      <AddTaskPopup />
+      <AddTaskPopup  />
       <div className="mt-3 flex gap-3 lg:gap-8">
         <Task title="Todo" status="TODO" />
         <Task title="In progress" status="IN_PROGRESS" />

@@ -3,6 +3,7 @@ import { v4 as uuid } from "uuid";
 
 const useProjectStore = create((set) => ({
   projects: [],
+  members: [],
   draggedTask: null,
   addProject: (title, description) =>
     set((state) => ({
@@ -10,6 +11,10 @@ const useProjectStore = create((set) => ({
         ...state.projects,
         { id: uuid(), title, description, tasks: [] },
       ],
+    })),
+  addMembers: (data) =>
+    set((state) => ({
+      members: [...state.members, ...data],
     })),
   editProject: (id, newTitle, newDescription) =>
     set((state) => ({
