@@ -9,11 +9,6 @@ import { QueryClient, QueryClientProvider } from "react-query";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// export const metadata = {
-//   title: "PMD",
-//   description: "project-management-dashboard",
-// };
-
 const queryClient = new QueryClient();
 export default function RootLayout({ children }) {
   return (
