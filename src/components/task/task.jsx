@@ -24,22 +24,27 @@ const Task = ({ title, status }) => {
     <div className="h-[400] flex-1">
       <h2 className="text-1xl">{title}</h2>
       <div
-        className={`mt-1 h-${
-          taskData.length > 1 ? "auto" : "28"
-        } w-full rounded-xl bg-blue-200 p-3`}
+        className={`mt-1 h-80 w-full rounded-xl bg-blue-200 p-3`}
         onDrop={handelDrop}
         onDragOver={(e) => e.preventDefault()}
       >
         <div className="flex flex-col gap-2">
-          {taskData && taskData.length ? (
+          {taskData &&
             taskData.map((task, index) => (
               <div key={index}>
                 <TaskDetails task={task} />
               </div>
-            ))
-          ) : (
-            <div>No contains available</div>
+            ))}
+          {taskData.length == 0 && status === "TODO" && (
+            <div className="mt-1 text-center text-sm text-black-300">
+              <p>Create a new task</p>
+            </div>
           )}
+          {tasks.length && taskData.length == 0 && status !== "TODO" ? (
+            <div className="mt-1 text-center text-sm text-black-300">
+              <p>Drag your tasks here</p>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
