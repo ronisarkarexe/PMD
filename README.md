@@ -32,6 +32,11 @@ PMD is a tool for managing projects and tasks, designed to simplify the process.
 ## System UI
 ![img1](https://github.com/ronisarkarexe/PMD/assets/76697055/f2b674f4-0b15-4033-a886-7eb7aa7e2e19)
 
+![img4](https://github.com/ronisarkarexe/PMD/assets/76697055/f1d1facd-cf42-47e3-ab42-4fdecaa9a51f)
+
+![img3](https://github.com/ronisarkarexe/PMD/assets/76697055/6602b7bd-1299-4067-929a-2276163eb762)
+
+
 ## ERD:
 ![img2](https://github.com/ronisarkarexe/PMD/assets/76697055/8a305438-632e-4146-9129-0152d9240ff0)
 
